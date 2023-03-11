@@ -1,5 +1,7 @@
 # Sistema de Gerenciamento de consultório odontológico ESmileProject
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4d7de13e41454e96b5926dc8c0095f7c)](https://app.codacy.com/gh/ESESmileProject/ESmile-Project?utm_source=github.com&utm_medium=referral&utm_content=ESESmileProject/ESmile-Project&utm_campaign=Badge_Grade_Settings)
+
            	🤵 INTEGRANTES
 #
 Guilherme R.  |  José A.  |  José G.  |  Mauro V.
