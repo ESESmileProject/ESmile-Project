@@ -1,4 +1,4 @@
-# Sistema de Gerenciamento de consultório odontológico ESmileProject
+# Sistema de Gerenciamento de consultório odontológico ESmileProject [![Codacy Badge](https://app.codacy.com/project/badge/Grade/950bfa9766144547818f7cdf3671616c)](https://www.codacy.com/gh/ESESmileProject/ESmile-Project/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ESESmileProject/ESmile-Project&amp;utm_campaign=Badge_Grade)
 
            	🤵 INTEGRANTES
 #
