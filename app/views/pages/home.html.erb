@@ -1,0 +1,36 @@
+<div>
+  <h1 class="font-bold text-4xl">Pages#home</h1>
+  <%if current_user %>
+    <p>Hello <%=current_user.email%>!</p>
+    <p>You are a [<%= current_user.role %>]</p>
+    <%if current_user.admin?%>
+      <br />
+       there are <%=User.count %> users
+      <br />
+      <%= link_to 'Recepcionistas', recepcionists_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+      <br/>
+      <%= link_to "Editar Perfil", edit_user_registration_path%>
+    <%end%>
+
+    <%if current_user.recep?%>
+      <br />
+      <p><%=link_to "Consultas", appointments_path %></p>
+      <br />
+      <%= link_to "Editar Perfil", edit_user_registration_path%>
+    <%end %>
+
+    <%if current_user.user?%>
+      <br />
+      <p>Usuario comum!!!!</p>
+      <br />
+      <%= link_to "Editar Perfil", edit_user_registration_path%>
+    <%end %>
+
+    <br />
+    <%= link_to "Sign out", destroy_user_session_path, 'data-turbo-method': :delete%>
+  <%else %>
+    <%= link_to "Sign up", new_user_registration_path%>
+    <br />
+    <%= link_to "Login", new_user_session_path%>
+  <%end %>
+</div>
