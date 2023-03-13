@@ -3253,3 +3253,420 @@ Migrating to AddSobrenomeAndNascimentoToRecepcionists (20230313063720)
   [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDentista (20230313223752)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "dentista" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "especialidade" varchar, "telefone" varchar, "endereco" varchar, "dia_semana" varchar, "horario_inicio" time, "horario_fim" time, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230313223752"]]
+  [1m[36mTRANSACTION (17.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2023-03-13 19:39:53 -0300
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 303 See Other in 35ms (ActiveRecord: 0.0ms | Allocations: 7043)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-13 19:39:53 -0300
+Processing by PagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:3
+  Rendered pages/home.html.erb within layouts/application (Duration: 26.7ms | Allocations: 5326)
+  Rendered layout layouts/application.html.erb (Duration: 908.0ms | Allocations: 100226)
+Completed 500 Internal Server Error in 954ms (ActiveRecord: 0.9ms | Allocations: 105002)
+
+
+  
+ActionView::Template::Error (Permission denied @ rb_file_s_rename - (C:/Users/Neto/Desktop/ESmile-Project/tmp/cache/assets/sprockets/v4.0.0/P7/P7RepUPPvZYkHGJm-dNugcUICQc8L1hypgMr2Ngcdno.cache.28140.1448.315286, C:/Users/Neto/Desktop/ESmile-Project/tmp/cache/assets/sprockets/v4.0.0/P7/P7RepUPPvZYkHGJm-dNugcUICQc8L1hypgMr2Ngcdno.cache)):
+  
+sprockets (4.2.0) lib/sprockets/path_utils.rb:362:in `rename'
+sprockets (4.2.0) lib/sprockets/path_utils.rb:362:in `atomic_write'
+sprockets (4.2.0) lib/sprockets/cache/file_store.rb:112:in `set'
+sprockets (4.2.0) lib/sprockets/cache.rb:227:in `set'
+sprockets (4.2.0) lib/sprockets/cache.rb:143:in `set'
+sprockets (4.2.0) lib/sprockets/loader.rb:266:in `store_asset'
+sprockets (4.2.0) lib/sprockets/loader.rb:226:in `load_from_unloaded'
+sprockets (4.2.0) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.0) lib/sprockets/loader.rb:337:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.0) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.0) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.0) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.0) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.2.0) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.2.0) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.2.0) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.2.0) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `block in synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
+Started GET "/" for 127.0.0.1 at 2023-03-13 19:39:55 -0300
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:3
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1360)
+  Rendered layout layouts/application.html.erb (Duration: 204.3ms | Allocations: 88398)
+Completed 200 OK in 208ms (Views: 205.1ms | ActiveRecord: 0.1ms | Allocations: 89066)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-03-13 19:39:56 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 264)
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 596)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 28.6ms | Allocations: 4603)
+  Rendered layout layouts/application.html.erb (Duration: 37.8ms | Allocations: 7362)
+Completed 200 OK in 55ms (Views: 46.0ms | ActiveRecord: 0.0ms | Allocations: 13032)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-13 19:40:02 -0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"teste@teste", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "teste@teste"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "teste@teste"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["role", 0], ["created_at", "2023-03-13 22:40:02.327813"], ["updated_at", "2023-03-13 22:40:02.327813"]]
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 247ms (ActiveRecord: 6.8ms | Allocations: 9746)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-13 19:40:02 -0300
+Processing by PagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:3
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1181)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 3864)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.3ms | Allocations: 4183)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-13 19:40:24 -0300
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:3
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/pages/home.html.erb:8
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1714)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 4279)
+Completed 200 OK in 16ms (Views: 13.7ms | ActiveRecord: 0.4ms | Allocations: 4577)
+
+
+Started GET "/dentista" for 127.0.0.1 at 2023-03-13 19:40:25 -0300
+Processing by DentistaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dentista/index.html.erb within layouts/application
+  [1m[36mDentistum Load (0.2ms)[0m  [1m[34mSELECT "dentista".* FROM "dentista"[0m
+  ↳ app/views/dentista/index.html.erb:12
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 29)
+  Rendered dentista/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1457)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 4242)
+Completed 200 OK in 22ms (Views: 15.9ms | ActiveRecord: 0.2ms | Allocations: 5626)
+
+
+Started GET "/dentista/new" for 127.0.0.1 at 2023-03-13 19:40:26 -0300
+Processing by DentistaController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dentista/new.html.erb within layouts/application
+  Rendered dentista/_form.html.erb (Duration: 20.6ms | Allocations: 3304)
+  Rendered dentista/new.html.erb within layouts/application (Duration: 23.1ms | Allocations: 3626)
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 6313)
+Completed 200 OK in 43ms (Views: 34.2ms | ActiveRecord: 0.9ms | Allocations: 11047)
+
+
+Started POST "/dentista" for 127.0.0.1 at 2023-03-13 19:41:59 -0300
+Processing by DentistaController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "dentistum"=>{"nome"=>"Neto", "especialidade"=>"Ortodontista", "telefone"=>"55555-55555", "endereco"=>"rua qualquer teste", "dia_semana"=>"segunda-feira", "horario_inicio"=>"12:45", "horario_fim"=>"21:17"}, "commit"=>"Create Dentistum"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/dentista_controller.rb:27:in `block in create'
+  [1m[36mDentistum Create (0.9ms)[0m  [1m[32mINSERT INTO "dentista" ("nome", "especialidade", "telefone", "endereco", "dia_semana", "horario_inicio", "horario_fim", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "Neto"], ["especialidade", "Ortodontista"], ["telefone", "55555-55555"], ["endereco", "rua qualquer teste"], ["dia_semana", "segunda-feira"], ["horario_inicio", "2000-01-01 12:45:00"], ["horario_fim", "2000-01-01 21:17:00"], ["created_at", "2023-03-13 22:41:59.719228"], ["updated_at", "2023-03-13 22:41:59.719228"]]
+  ↳ app/controllers/dentista_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (18.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/dentista_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/dentista/1
+Completed 302 Found in 29ms (ActiveRecord: 19.8ms | Allocations: 3029)
+
+
+Started GET "/dentista/1" for 127.0.0.1 at 2023-03-13 19:41:59 -0300
+Processing by DentistaController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mDentistum Load (0.3ms)[0m  [1m[34mSELECT "dentista".* FROM "dentista" WHERE "dentista"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dentista_controller.rb:63:in `set_dentistum'
+  Rendering layout layouts/application.html.erb
+  Rendering dentista/show.html.erb within layouts/application
+  Rendered dentista/_dentistum.html.erb (Duration: 0.8ms | Allocations: 507)
+  Rendered dentista/show.html.erb within layouts/application (Duration: 87.8ms | Allocations: 8134)
+  Rendered layout layouts/application.html.erb (Duration: 95.9ms | Allocations: 10806)
+Completed 200 OK in 102ms (Views: 96.8ms | ActiveRecord: 0.3ms | Allocations: 12517)
+
+
+Started GET "/dentista" for 127.0.0.1 at 2023-03-13 19:42:04 -0300
+Processing by DentistaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dentista/index.html.erb within layouts/application
+  [1m[36mDentistum Load (0.1ms)[0m  [1m[34mSELECT "dentista".* FROM "dentista"[0m
+  ↳ app/views/dentista/index.html.erb:12
+  Rendered collection of dentista/_dentistum.html.erb [1 times] (Duration: 1.0ms | Allocations: 510)
+  Rendered dentista/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1596)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 4160)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.1ms | Allocations: 4504)
+
+
+Started GET "/dentista/new" for 127.0.0.1 at 2023-03-13 19:42:11 -0300
+Processing by DentistaController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dentista/new.html.erb within layouts/application
+  Rendered dentista/_form.html.erb (Duration: 2.2ms | Allocations: 1861)
+  Rendered dentista/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1970)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 4532)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.0ms | Allocations: 4852)
+
+
+Started GET "/dentista" for 127.0.0.1 at 2023-03-13 19:42:12 -0300
+Processing by DentistaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dentista/index.html.erb within layouts/application
+  [1m[36mDentistum Load (0.2ms)[0m  [1m[34mSELECT "dentista".* FROM "dentista"[0m
+  ↳ app/views/dentista/index.html.erb:12
+  Rendered collection of dentista/_dentistum.html.erb [1 times] (Duration: 0.4ms | Allocations: 149)
+  Rendered dentista/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1113)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 3675)
+Completed 200 OK in 14ms (Views: 11.9ms | ActiveRecord: 0.2ms | Allocations: 3984)
+
+
+Started GET "/dentista/1" for 127.0.0.1 at 2023-03-13 19:42:13 -0300
+Processing by DentistaController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDentistum Load (0.2ms)[0m  [1m[34mSELECT "dentista".* FROM "dentista" WHERE "dentista"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dentista_controller.rb:63:in `set_dentistum'
+  Rendering layout layouts/application.html.erb
+  Rendering dentista/show.html.erb within layouts/application
+  Rendered dentista/_dentistum.html.erb (Duration: 0.2ms | Allocations: 82)
+  Rendered dentista/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 542)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 3096)
+Completed 200 OK in 13ms (Views: 9.7ms | ActiveRecord: 0.2ms | Allocations: 3916)
+
+
+Started GET "/dentista/1/edit" for 127.0.0.1 at 2023-03-13 19:42:14 -0300
+Processing by DentistaController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDentistum Load (0.2ms)[0m  [1m[34mSELECT "dentista".* FROM "dentista" WHERE "dentista"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dentista_controller.rb:63:in `set_dentistum'
+  Rendering layout layouts/application.html.erb
+  Rendering dentista/edit.html.erb within layouts/application
+  Rendered dentista/_form.html.erb (Duration: 2.3ms | Allocations: 1897)
+  Rendered dentista/edit.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2196)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 4750)
+Completed 200 OK in 20ms (Views: 13.3ms | ActiveRecord: 0.2ms | Allocations: 5600)
+
+
+Started GET "/dentista" for 127.0.0.1 at 2023-03-13 19:42:16 -0300
+Processing by DentistaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dentista/index.html.erb within layouts/application
+  [1m[36mDentistum Load (0.1ms)[0m  [1m[34mSELECT "dentista".* FROM "dentista"[0m
+  ↳ app/views/dentista/index.html.erb:12
+  Rendered collection of dentista/_dentistum.html.erb [1 times] (Duration: 0.5ms | Allocations: 149)
+  Rendered dentista/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1104)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 3666)
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.1ms | Allocations: 3975)
+
+
+Started GET "/dentista/1/edit" for 127.0.0.1 at 2023-03-13 19:42:41 -0300
+Processing by DentistaController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDentistum Load (0.2ms)[0m  [1m[34mSELECT "dentista".* FROM "dentista" WHERE "dentista"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dentista_controller.rb:63:in `set_dentistum'
+  Rendering layout layouts/application.html.erb
+  Rendering dentista/edit.html.erb within layouts/application
+  Rendered dentista/_form.html.erb (Duration: 2.3ms | Allocations: 1885)
+  Rendered dentista/edit.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2025)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 4579)
+Completed 200 OK in 15ms (Views: 11.2ms | ActiveRecord: 0.2ms | Allocations: 5376)
+
+
+Started GET "/dentista" for 127.0.0.1 at 2023-03-13 19:42:43 -0300
+Processing by DentistaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dentista/index.html.erb within layouts/application
+  [1m[36mDentistum Load (0.2ms)[0m  [1m[34mSELECT "dentista".* FROM "dentista"[0m
+  ↳ app/views/dentista/index.html.erb:12
+  Rendered collection of dentista/_dentistum.html.erb [1 times] (Duration: 0.9ms | Allocations: 149)
+  Rendered dentista/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1086)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 3648)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.2ms | Allocations: 3957)
+
+
+Started GET "/dentista/1" for 127.0.0.1 at 2023-03-13 19:45:05 -0300
+Processing by DentistaController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDentistum Load (0.1ms)[0m  [1m[34mSELECT "dentista".* FROM "dentista" WHERE "dentista"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dentista_controller.rb:63:in `set_dentistum'
+  Rendering layout layouts/application.html.erb
+  Rendering dentista/show.html.erb within layouts/application
+  Rendered dentista/_dentistum.html.erb (Duration: 0.5ms | Allocations: 82)
+  Rendered dentista/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 530)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 3084)
+Completed 200 OK in 13ms (Views: 9.8ms | ActiveRecord: 0.1ms | Allocations: 3880)
+
+
+Started GET "/dentista" for 127.0.0.1 at 2023-03-13 19:53:41 -0300
+Processing by DentistaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dentista/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/dentista/index.html.erb:12
+  [1m[36mDentistum Load (0.1ms)[0m  [1m[34mSELECT "dentista".* FROM "dentista"[0m
+  ↳ app/views/dentista/index.html.erb:12
+  Rendered collection of dentista/_dentistum.html.erb [1 times] (Duration: 0.4ms | Allocations: 149)
+  Rendered dentista/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1816)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 4394)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.4ms | Allocations: 4701)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-13 19:53:47 -0300
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:3
+  [1m[36mUser Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/pages/home.html.erb:8
+  Rendered pages/home.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1732)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 4294)
+Completed 200 OK in 18ms (Views: 15.5ms | ActiveRecord: 0.4ms | Allocations: 4589)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2023-03-13 19:53:49 -0300
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 95ms (ActiveRecord: 0.2ms | Allocations: 8446)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-13 19:53:49 -0300
+Processing by PagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 372)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 3062)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.0ms | Allocations: 3404)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-03-13 19:53:51 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 240)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.3ms | Allocations: 2250)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 4998)
+Completed 200 OK in 27ms (Views: 25.1ms | ActiveRecord: 0.0ms | Allocations: 6131)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-03-13 19:53:52 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 24)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 78)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1022)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 3586)
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 0.0ms | Allocations: 4284)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-13 19:54:00 -0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"teste@2", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "teste@2"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "teste@2"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["role", 0], ["created_at", "2023-03-13 22:54:00.567660"], ["updated_at", "2023-03-13 22:54:00.567660"]]
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 215ms (ActiveRecord: 7.4ms | Allocations: 5823)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-13 19:54:00 -0300
+Processing by PagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:3
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1072)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 3639)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.1ms | Allocations: 3938)
+
+
+Started GET "/dentista" for 127.0.0.1 at 2023-03-13 19:54:07 -0300
+Processing by DentistaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dentista/index.html.erb within layouts/application
+  [1m[36mDentistum Load (0.2ms)[0m  [1m[34mSELECT "dentista".* FROM "dentista"[0m
+  ↳ app/views/dentista/index.html.erb:12
+  Rendered collection of dentista/_dentistum.html.erb [1 times] (Duration: 0.4ms | Allocations: 172)
+  Rendered dentista/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1141)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 3703)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.2ms | Allocations: 4011)
+
+
+Started GET "/recepcionists" for 127.0.0.1 at 2023-03-13 19:54:20 -0300
+Processing by RecepcionistsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recepcionists/index.html.erb within layouts/application
+  [1m[36mRecepcionist Load (0.2ms)[0m  [1m[34mSELECT "recepcionists".* FROM "recepcionists"[0m
+  ↳ app/views/recepcionists/index.html.erb:13
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 18)
+  Rendered recepcionists/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1440)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 4234)
+Completed 200 OK in 24ms (Views: 17.3ms | ActiveRecord: 0.2ms | Allocations: 5602)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-13 19:54:24 -0300
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:3
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1126)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 3688)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.2ms | Allocations: 4004)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2023-03-13 19:54:39 -0300
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 7ms (ActiveRecord: 0.2ms | Allocations: 1888)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-13 19:54:39 -0300
+Processing by PagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 312)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 2880)
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 3178)
+
+

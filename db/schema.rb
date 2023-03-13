@@ -10,9 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_13_063720) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_13_223752) do
   create_table "appointments", force: :cascade do |t|
     t.date "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "dentista", force: :cascade do |t|
+    t.string "nome"
+    t.string "especialidade"
+    t.string "telefone"
+    t.string "endereco"
+    t.string "dia_semana"
+    t.time "horario_inicio"
+    t.time "horario_fim"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

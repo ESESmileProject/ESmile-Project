@@ -1,0 +1,42 @@
+<div id="<%= dom_id dentistum %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Nome:</strong>
+    <%= dentistum.nome %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Especialidade:</strong>
+    <%= dentistum.especialidade %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Telefone:</strong>
+    <%= dentistum.telefone %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Endereco:</strong>
+    <%= dentistum.endereco %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Dia semana:</strong>
+    <%= dentistum.dia_semana %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Horario inicio:</strong>
+    <%= dentistum.horario_inicio %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Horario fim:</strong>
+    <%= dentistum.horario_fim %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this dentistum", dentistum, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this dentistum', edit_dentistum_path(dentistum), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
