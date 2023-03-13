@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  especialidade: MyString
+  telefone: MyString
+  endereco: MyString
+  dia_semana: MyString
+  horario_inicio: 2023-03-13 19:37:52
+  horario_fim: 2023-03-13 19:37:52
+
+two:
+  nome: MyString
+  especialidade: MyString
+  telefone: MyString
+  endereco: MyString
+  dia_semana: MyString
+  horario_inicio: 2023-03-13 19:37:52
+  horario_fim: 2023-03-13 19:37:52
