@@ -48,3 +48,5 @@ group :production, :actions do
 end
 
 gem "tailwindcss-rails"
+
+gem "devise", "~> 4.9"
