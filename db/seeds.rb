@@ -16,21 +16,21 @@ admin.update_attribute(:role, 2)
 #admin.toggle!(:admin)
 admin.save
 
-user1 = User.create(
+usuario1= User.create(
   :email => "sara@example.com",
   :password => "123456",
   :password_confirmation => "123456"
 )
-user1.update_attribute(:role, 0)
-user1.save
+usuario1.update_attribute(:role, 0)
+usuario1.save
 
-user2 = User.create(
+usuario2 = User.create(
   :email => "felipe@example.com",
   :password => "123456",
   :password_confirmation => "123456"
 )
-user2.update_attribute(:role, 0)
-user2.save
+usuario2.update_attribute(:role, 0)
+usuario2.save
 
 recepsionista1 = User.create(
   :email => "recep@example.com",
