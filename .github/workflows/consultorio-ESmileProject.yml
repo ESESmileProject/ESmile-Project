@@ -58,4 +58,4 @@ jobs:
         env:
           RAILS_ENV: actions
         run: |
-          rake test
+          bundle exec rake

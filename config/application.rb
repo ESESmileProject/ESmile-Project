@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module ESmileProject
   class Application < Rails::Application
+    Rails.autoloaders.main.ignore(Rails.root.join('app/controllers/users'))
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
