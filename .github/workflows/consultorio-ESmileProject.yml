@@ -55,5 +55,7 @@ jobs:
         run: |
           bundle exec rails db:prepare
       - name: rake test
+        env:
+          RAILS_ENV: actions
         run: |
           rake test
