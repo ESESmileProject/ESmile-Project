@@ -1,3 +1,4 @@
+
 name: CI
 on: [push, pull_request]
 
@@ -53,3 +54,8 @@ jobs:
           DISABLE_SPRING: 1
         run: |
           bundle exec rails db:prepare
+      - name: rake test
+        env:
+          RAILS_ENV: actions
+        run: |
+          bundle exec rake
