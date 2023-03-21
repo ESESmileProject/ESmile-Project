@@ -40,6 +40,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem 'rspec-rails'
 end
 
 group :production, :actions do
@@ -50,3 +51,8 @@ end
 gem "tailwindcss-rails"
 
 gem "devise", "~> 4.9"
+
+gem 'cucumber-rails', :require => false
+
+gem 'database_cleaner'
+gem 'factory_bot_rails'

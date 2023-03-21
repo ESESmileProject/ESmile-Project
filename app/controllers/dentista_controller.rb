@@ -1,5 +1,9 @@
 class DentistaController < ApplicationController
   before_action :set_dentistum, only: %i[ show edit update destroy ]
+  validates :name, :especialidade, :telefone, :endereco, :dia_semana, :horario_fim, :horario_fim, presence :true
+  validates :name, :with => /^[a-z]+$/i
+  validates :name, :especialidade, :telefone, :endereco. :dia_semana, length: {minimum:5}
+  validates 
 
   # GET /dentista or /dentista.json
   def index
