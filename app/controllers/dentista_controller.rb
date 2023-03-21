@@ -1,6 +1,7 @@
 class DentistaController < ApplicationController
   before_action :set_dentistum, only: %i[ show edit update destroy ]
 
+
   # GET /dentista or /dentista.json
   def index
     @dentista = Dentistum.all
