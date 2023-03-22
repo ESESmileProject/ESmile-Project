@@ -27,9 +27,9 @@ jobs:
         with:
           ruby-version: 3.1.1
 
-      - name: Install PostgreSQL client
+      - name: Install PostgreSQL client and dependecies
         run: |
-          sudo apt-get -yqq install libpq-dev
+          sudo apt-get -yqq install libpq-dev cucumber
       - name: Cache Ruby Gems
         uses: actions/cache@v2
         with:
