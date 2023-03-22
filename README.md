@@ -7,7 +7,7 @@ Guilherme R.  |  José A.  |  José G.  |  Mauro V.
 	        📕 SOBRE O PROJETO
 #
 Projeto de implementação de um consultório odontológico em Ruby e Rails para a disciplina de Engenharia de Software ministrado pelo Professor Dr. Rodrigo Andrade, da UFAPE, referente ao período de 2022.1 com intuito de avaliação para a 2ª Verificação de Aprendizagem. O projeto consiste em um visitante conseguir se cadastrar como paciente e agendar consutlas em horários dispóniveis, o recepcionista que poderá marcar ou desmarcar uma consulta caso seja necessário. Com objetivo de tornar mais simples para o paciente agendar sua consulta.
-* [Site no Railway app](https://esmileproject-production.up.railway.app)
+* [Site no Railway app](https://web-production-cd60.up.railway.app/)
 #
 	        📌 OBJETIVOS
 #
