@@ -62,4 +62,4 @@ jobs:
       
       - name: cucumber tests
         run: |
-          cucumber
+          bundle exec cucumber
