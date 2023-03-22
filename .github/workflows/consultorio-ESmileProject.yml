@@ -59,3 +59,7 @@ jobs:
           RAILS_ENV: actions
         run: |
           bundle exec rake
+      
+      - name: cucumber tests
+        run: |
+          cucumber
